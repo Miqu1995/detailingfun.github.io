@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@detailingfun | Pasja do Detali | Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            height: 80vh;
+            /* Zmieniono na hero.png */
+            background-image: linear-gradient(to bottom, rgba(10,10,10,0.1), #0a0a0a), url('hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255,255,255,0.6);
+        }
+
+        .ig-handle {
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        p.description {
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1100px;
+            margin: -100px auto 60px auto;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .photo-card {
+            background-color: #fff;
+            padding: 15px 15px 40px 15px;
+            border-radius: 2px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .photo-card span {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .photo-card:nth-child(1) { transform: rotate(-5deg); }
+        .photo-card:nth-child(2) { transform: rotate(3deg); margin-top: 20px; }
+        .photo-card:nth-child(3) { transform: rotate(-2deg); }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.05) !important;
+            box-shadow: 0 15px 35px rgba(255,255,255,0.2);
+            z-index: 20;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #333, #111);
+            color: #fff;
+            padding: 18px 35px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border: 2px solid #444;
+            transition: all 0.3s ease;
+            margin-bottom: 80px;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            header { height: 60vh; }
+            .photo-grid { margin-top: -50px; grid-template-columns: 1fr 1fr; }
+            .photo-card { padding: 10px 10px 30px 10px; }
+            .photo-card img { height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Detailing Fun</h1>
+        <div class="ig-handle">@detailingfun</div>
+        <p class="description">
+            Pasja przekuta w blask. Śledź moje codzienne zmagania o perfekcyjne wykończenie i odkrywaj sekrety profesjonalnego detailingu. Najnowsze projekty i porady znajdziesz na moim Instagramie.
+        </p>
+    </header>
+
+    <div class="photo-grid">
+        <!-- Zmieniono na .png -->
+        <a href="https://www.instagram.com/detailingfun/" class="photo-card" target="_blank">
+            <img src="img1.png" alt="Proces polerowania detailing">
+            <span>#POLEROWANIE</span>
+        </a>
+
+        <!-- Zmieniono na .png -->
+        <a href="https://www.instagram.com/detailingfun/" class="photo-card" target="_blank">
+            <img src="img2.png" alt="Głęboki blask lakieru">
+            <span>#PERFEKCJA</span>
+        </a>
+
+        <!-- Zmieniono na .png -->
+        <a href="https://www.instagram.com/detailingfun/" class="photo-card" target="_blank">
+            <img src="img3.png" alt="Pianowanie auta detailing">
+            <span>#MYCIE</span>
+        </a>
+    </div>
+
+    <a href="https://www.instagram.com/detailingfun/" class="cta-button" target="_blank">
+        ZOBACZ WIĘCEJ NA INSTAGRAMIE
+    </a>
+
+    <footer>
+        &copy; 2026 @detailingfun. All rights reserved. | Strona stworzona z pomocą AI.
+    </footer>
+
+</body>
+</html>
