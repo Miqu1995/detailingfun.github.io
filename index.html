@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@detailingfun | Pasja, która daje blask</title>
     
-    <!-- Import czcionki w stylu logo (Satisfy) z Google Fonts -->
+    <!-- Import czcionki w stylu logo (Satisfy) oraz ikon FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         * {
@@ -25,9 +26,9 @@
         }
 
         header {
-            height: 60vh;
+            min-height: 70vh;
             /* hero.png jako tło nagłówka */
-            background-image: linear-gradient(to bottom, rgba(10,10,10,0.4), #0a0a0a), url('hero.png');
+            background-image: linear-gradient(to bottom, rgba(10,10,10,0.5), #0a0a0a), url('hero.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -35,77 +36,106 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        /* STYL STWORZONY DLA TWOJEGO NOWEGO LOGO TEKSTOWEGO */
+        /* LOGO TEKSTOWE Z ANIMACJĄ WEJŚCIA */
         .logo-text {
             font-family: 'Satisfy', cursive;
-            font-size: 4rem; /* Duży, wyrazisty rozmiar */
+            font-size: 4.5rem;
             color: #ffffff;
             margin-bottom: 5px;
             letter-spacing: 1px;
-            /* Delikatny, profesjonalny efekt poświaty/blasku neonu */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 
-                         0 0 20px rgba(255, 255, 255, 0.2);
-            user-select: none; /* Blokuje przypadkowe zaznaczanie tekstu */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            user-select: none;
+            animation: fadeInDown 1s ease-out forwards;
         }
 
         .instagram-handle {
             font-size: 1.3rem;
             color: #cccccc;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 300;
             letter-spacing: 2px;
+            animation: fadeInDown 1.2s ease-out forwards;
         }
 
+        /* NOWY, LIFESTYLOWY OPIS BLOGA */
         .description {
-            max-width: 600px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #aaaaaa;
-            margin-bottom: 40px;
+            max-width: 650px;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #b5b5b5;
+            margin-bottom: 35px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        /* ELEGANCKI, PULSUJĄCY PRZYCISK INSTAGRAMA */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1.2s ease-out forwards, pulseShadow 2s infinite alternate;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.6);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px 80px 20px;
+            padding: 40px 20px 80px 20px;
         }
 
+        /* GALERIA ZDJĘĆ */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
             margin-top: 20px;
         }
 
         .photo-card {
             background-color: #ffffff;
             border-radius: 4px;
-            padding: 15px 15px 35px 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 16px 16px 36px 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
             text-decoration: none;
             display: block;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
         }
 
-        /* Lekki obrót nadający styl klasycznych zdjęć polaroid */
-        .photo-grid .photo-card:nth-child(1) { transform: rotate(-3deg); }
-        .photo-grid .photo-card:nth-child(2) { transform: rotate(1deg); }
-        .photo-grid .photo-card:nth-child(3) { transform: rotate(2deg); }
+        /* Efekt polaroidów z lekkim obrotem */
+        .photo-grid .photo-card:nth-child(1) { transform: rotate(-3deg); animation-delay: 0.2s; }
+        .photo-grid .photo-card:nth-child(2) { transform: rotate(1deg); animation-delay: 0.4s; }
+        .photo-grid .photo-card:nth-child(3) { transform: rotate(2deg); animation-delay: 0.6s; }
 
         .photo-card:hover {
-            transform: scale(1.05) rotate(0deg) !important;
-            box-shadow: 0 15px 40px rgba(255,255,255,0.1);
+            transform: scale(1.06) rotate(0deg) !important;
+            box-shadow: 0 20px 40px rgba(255,255,255,0.12);
             z-index: 10;
         }
 
         .photo-card img {
             width: 100%;
-            height: 250px;
+            height: 260px;
             object-fit: cover;
-            border: 1px solid #ddd;
+            border: 1px solid #e5e5e5;
             margin-bottom: 15px;
         }
 
@@ -121,39 +151,91 @@
         footer {
             text-align: center;
             padding: 40px 20px;
-            border-top: 1px solid #1a1a1a;
-            color: #555555;
+            border-top: 1px solid #151515;
+            color: #444444;
             font-size: 0.9rem;
         }
 
         footer a {
-            color: #888888;
+            color: #777777;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         footer a:hover {
             color: #ffffff;
         }
 
+        /* ANIMACJE CSS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseShadow {
+            0% {
+                box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+            }
+            100% {
+                box-shadow: 0 4px 25px rgba(220, 39, 67, 0.7);
+            }
+        }
+
         /* Responsywność dla urządzeń mobilnych */
         @media (max-width: 768px) {
-            .logo-text { 
-                font-size: 3rem; /* Zmniejszamy logo na telefonach, żeby się mieściło */
+            header {
+                min-height: 80vh;
             }
-            .instagram-handle { font-size: 1.1rem; }
-            .photo-card { transform: rotate(0deg) !important; }
+            .logo-text { 
+                font-size: 3.2rem;
+            }
+            .instagram-handle { 
+                font-size: 1.1rem; 
+            }
+            .description {
+                font-size: 1.05rem;
+            }
+            .photo-card { 
+                transform: rotate(0deg) !important; 
+                opacity: 1 !important;
+                animation: none !important;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Zamiast obrazka, mamy teraz czysty, stylowy tekst z efektem blasku -->
+        <!-- Twoje logo tekstowe -->
         <h1 class="logo-text">DetailingFun</h1>
         <div class="instagram-handle">@detailingfun</div>
+        
+        <!-- Nowy lifestylowy opis pasjonata -->
         <p class="description">
-            Pasja przekuta w blask. Śledź moje codzienne zmagania o perfekcyjne wykończenie i odkrywaj sekrety profesjonalnego detailingu. Najnowsze projekty i porady znajdziesz na moim Instagramie.
+            Cześć! Tu nie ma sztywnej firmy ani nudnych cenników. Jest za to czysta, weekendowa zajawka, zapach dobrego wosku i walka o idealne lustro w garażu. Testuję kosmetyki, bawię się detailingiem i pokazuję, jak wycisnąć z lakieru absolutne maksimum. Wpadaj śledzić moje codzienne zmagania!
         </p>
+
+        <!-- Luźny, zachęcający przycisk Instagrama -->
+        <a href="https://www.instagram.com/detailingfun/" class="cta-btn" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i> Wejdź do garażu na Insta
+        </a>
     </header>
 
     <div class="container">
