@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@detailingfun | Pasja, która daje blask</title>
+    
+    <!-- Import czcionki w stylu logo (Satisfy) z Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -20,8 +26,8 @@
 
         header {
             height: 60vh;
-            /* hero.png zapisane małymi literami */
-            background-image: linear-gradient(to bottom, rgba(10,10,10,0.3), #0a0a0a), url('hero.png');
+            /* hero.png jako tło nagłówka */
+            background-image: linear-gradient(to bottom, rgba(10,10,10,0.4), #0a0a0a), url('hero.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -32,26 +38,25 @@
             padding: 20px;
         }
 
-        /* Styl dla Twojego logo w nagłówku */
-        .logo-container {
-            max-width: 350px; /* Maksymalna szerokość logo na ekranie */
-            width: 80%;       /* Dopasowanie do mniejszych ekranów telefonów */
-            height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3)); /* Lekka poświata wokół logo */
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            display: block;
+        /* STYL STWORZONY DLA TWOJEGO NOWEGO LOGO TEKSTOWEGO */
+        .logo-text {
+            font-family: 'Satisfy', cursive;
+            font-size: 4rem; /* Duży, wyrazisty rozmiar */
+            color: #ffffff;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            /* Delikatny, profesjonalny efekt poświaty/blasku neonu */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 
+                         0 0 20px rgba(255, 255, 255, 0.2);
+            user-select: none; /* Blokuje przypadkowe zaznaczanie tekstu */
         }
 
         .instagram-handle {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #cccccc;
             margin-bottom: 30px;
             font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .description {
@@ -85,7 +90,7 @@
             display: block;
         }
 
-        /* Lekki obrót nadający styl klasycznych zdjęć */
+        /* Lekki obrót nadający styl klasycznych zdjęć polaroid */
         .photo-grid .photo-card:nth-child(1) { transform: rotate(-3deg); }
         .photo-grid .photo-card:nth-child(2) { transform: rotate(1deg); }
         .photo-grid .photo-card:nth-child(3) { transform: rotate(2deg); }
@@ -130,9 +135,12 @@
             color: #ffffff;
         }
 
+        /* Responsywność dla urządzeń mobilnych */
         @media (max-width: 768px) {
-            .logo-container { max-width: 250px; }
-            .instagram-handle { font-size: 1.2rem; }
+            .logo-text { 
+                font-size: 3rem; /* Zmniejszamy logo na telefonach, żeby się mieściło */
+            }
+            .instagram-handle { font-size: 1.1rem; }
             .photo-card { transform: rotate(0deg) !important; }
         }
     </style>
@@ -140,10 +148,8 @@
 <body>
 
     <header>
-        <!-- logo.png zapisane małymi literami -->
-        <div class="logo-container">
-            <img src="logo.png" alt="Detailingfun Logo">
-        </div>
+        <!-- Zamiast obrazka, mamy teraz czysty, stylowy tekst z efektem blasku -->
+        <h1 class="logo-text">DetailingFun</h1>
         <div class="instagram-handle">@detailingfun</div>
         <p class="description">
             Pasja przekuta w blask. Śledź moje codzienne zmagania o perfekcyjne wykończenie i odkrywaj sekrety profesjonalnego detailingu. Najnowsze projekty i porady znajdziesz na moim Instagramie.
@@ -153,7 +159,6 @@
     <div class="container">
         <div class="photo-grid">
             
-            <!-- Trzy dolne zdjęcia bez zmian (duże .PNG) -->
             <a href="https://www.instagram.com/detailingfun/" class="photo-card" target="_blank">
                 <img src="img1.PNG" alt="Proces polerowania detailing">
                 <span>#POLEROWANIE</span>
