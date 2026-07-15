@@ -20,7 +20,8 @@
 
         header {
             height: 60vh;
-            background-image: linear-gradient(to bottom, rgba(10,10,10,0.3), #0a0a0a), url('hero.PNG');
+            /* hero.png zapisane małymi literami */
+            background-image: linear-gradient(to bottom, rgba(10,10,10,0.3), #0a0a0a), url('hero.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -31,13 +32,19 @@
             padding: 20px;
         }
 
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255,255,255,0.6);
-            margin-bottom: 10px;
-            font-weight: 800;
+        /* Styl dla Twojego logo w nagłówku */
+        .logo-container {
+            max-width: 350px; /* Maksymalna szerokość logo na ekranie */
+            width: 80%;       /* Dopasowanie do mniejszych ekranów telefonów */
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3)); /* Lekka poświata wokół logo */
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .instagram-handle {
@@ -124,7 +131,7 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
+            .logo-container { max-width: 250px; }
             .instagram-handle { font-size: 1.2rem; }
             .photo-card { transform: rotate(0deg) !important; }
         }
@@ -133,7 +140,10 @@
 <body>
 
     <header>
-        <h1>Detailing Fun</h1>
+        <!-- logo.png zapisane małymi literami -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Detailingfun Logo">
+        </div>
         <div class="instagram-handle">@detailingfun</div>
         <p class="description">
             Pasja przekuta w blask. Śledź moje codzienne zmagania o perfekcyjne wykończenie i odkrywaj sekrety profesjonalnego detailingu. Najnowsze projekty i porady znajdziesz na moim Instagramie.
@@ -143,6 +153,7 @@
     <div class="container">
         <div class="photo-grid">
             
+            <!-- Trzy dolne zdjęcia bez zmian (duże .PNG) -->
             <a href="https://www.instagram.com/detailingfun/" class="photo-card" target="_blank">
                 <img src="img1.PNG" alt="Proces polerowania detailing">
                 <span>#POLEROWANIE</span>
@@ -162,7 +173,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Detailing Fun. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2026 Detailingfun. Wszystkie prawa zastrzeżone.</p>
         <p>Zaobserwuj mnie na <a href="https://www.instagram.com/detailingfun/" target="_blank">Instagramie</a></p>
     </footer>
 
